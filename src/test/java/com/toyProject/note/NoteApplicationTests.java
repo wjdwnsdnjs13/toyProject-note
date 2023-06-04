@@ -1,10 +1,10 @@
-package com.together.springStudy;
+package com.toyProject.note;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringStudyApplicationTests {
+class NoteApplicationTests {
 
 	@Test
 	void contextLoads() {

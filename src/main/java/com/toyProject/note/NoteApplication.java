@@ -1,13 +1,13 @@
-package com.together.springStudy;
+package com.toyProject.note;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringStudyApplication {
+public class NoteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringStudyApplication.class, args);
+		SpringApplication.run(NoteApplication.class, args);
 	}
 
 }
