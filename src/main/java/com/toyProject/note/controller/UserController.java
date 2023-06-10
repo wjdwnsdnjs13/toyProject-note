@@ -45,10 +45,10 @@ public class UserController {
         //여기서 검증하기 위해 user 필드를 사용하는 것도 불필요해 보이고(최초 로그인 요청 전까지는 계속 null 상태로 떠다니 잖아)
         // 애초에 loginUser의 리턴 값이 boolean 타입이면 될 거 같음.
         User user1 = userService.loginUser(user);
-        log.debug(" 이게 {}", user1.toString());
         if(user1 != null) return ResponseEntity.status(HttpStatus.OK).build();
         else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
+
 
 
 }

@@ -13,5 +13,11 @@ public class User {
     private String userSnsProvider;
     private int userType;
 
+    public User(){}
+    public User(String userId, String userPw){
+        this.userId = userId;
+        this.userPw = userPw;
+    }
+
 
 }

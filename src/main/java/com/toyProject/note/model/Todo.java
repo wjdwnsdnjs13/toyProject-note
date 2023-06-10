@@ -7,7 +7,7 @@ import java.util.Date;
 @Data
 public class Todo {
     private int todoId;
-    private int userId;
+    private int userNo;
     private String todoTitle;
     private String todoDescription;
     private Date todoWriteDate;

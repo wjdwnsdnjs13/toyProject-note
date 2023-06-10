@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor //생성자 자동 생성
 public class UserService {
 
+    //Autowired 안해주면 생성자 주입이 되지 않기 때문에 NullPointerException이 뜨므로 주의할 것.
+    @Autowired
     UserMapper userMapper;
 
     @Transactional // 트랜잭션 보장이 된 메소드로 설정해줌.
