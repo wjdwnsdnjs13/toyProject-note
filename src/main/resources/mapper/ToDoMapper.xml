@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.toyProject.note.mapper.ToDoMapper">
+    <!-- id와 @Mapper 에서 정의한 이름과 동일해야됨 -->
+    <resultMap id="ToDoResultMap" type="com.toyProject.note.model.Todo">
+        <id column="todo_id" property="todoId" />
+        <result column="user_id" property="userId" />
+        <result column="todo_title" property="todoTitle" />
+        <result column="todo_description" property="todoDescription" />
+        <result column="todo_write_date" property="todoWriteDate" />
+        <result column="todo_due_date" property="todoDueDate" />
+        <result column="todo_completed" property="todoCompleted" />
+        <result column="todo_daily" property="todoDaily" />
+        <!-- Plus other columns and properties if you have more -->
+    </resultMap>
+    <select id="selectNoteAll" resultMap="ToDoResultMap">
+        SELECT * FROM todo
+    </select>
+    <update id="todoCompleted" parameterType="Long">
+        UPDATE todo SET todo_completed = 1 WHERE todo_id = #{todoId};
+    </update>
+    <update id="todoNoneCompleted" parameterType="Long">
+        UPDATE todo SET todo_completed = 0 WHERE todo_id = #{todoId};
+    </update>
+    <delete id="todoDelete" parameterType="Long">
+        DELETE FROM todo where todo_id = #{todoId};
+    </delete>
+    <insert id="todoInsert" parameterType="todo">
+        INSERT INTO todo
+        (user_no, todo_title, todo_description, todo_write_date, todo_due_date, todo_completed, todo_daily)
+        VALUES (#{userNo}, #{todoTitle}, #{todoDescription}, #{todoWriteDate}, #{todoDueDate}, #{todoCompleted}, #{todoDaily});
+    </insert>
+</mapper>
