@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.toyProject.note.mapper.ExamNetworkMapper">
+    <!-- id와 @Mapper 에서 정의한 이름과 동일해야됨 -->
+    <resultMap id="ExamNetworkResultMap" type="com.toyProject.note.model.ExamNetwork">
+        <id column="exam_id" property="examId" />
+        <result column="exam_description" property="examDescription" />
+        <result column="exam_type" property="examType" />
+        <result column="exam_answer" property="examAnswer" />
+        <!-- Plus other columns and properties if you have more -->
+    </resultMap>
+    <select id="selectExamAll" resultMap="ExamNetworkResultMap">
+        SELECT * FROM examnetwork;
+    </select>
+    <insert id="insertExamNetwork" parameterType="ExamNetwork">
+        insert into examnetwork
+        (exam_description, exam_type, answer)
+        values (#{examDescription}, #{examType}, #{ExamAnswer});
+    </insert>
+</mapper>
